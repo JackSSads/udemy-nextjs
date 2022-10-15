@@ -1,0 +1,12 @@
+1° - Criar o projeto >
+    => npm create-next-app nome_do_projeto
+2° - Criar arquivo tsconfig.json
+3° - Instalar TypeScript >
+    => npm i --save-dev @types/react
+    => npm i --save-dev typescript
+4° - Instalar taiwndcss >
+    => npm install -D tailwindcss postcss autoprefixer
+5° - Iniciar taiwndcss >
+    => npx tailwindcss init -p
+6° - Modificar arquivo taiwndcss (consultar documentção)
+7° - Adicionar diretivas taiwndcss ao css global
