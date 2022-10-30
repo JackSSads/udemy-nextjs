@@ -17,15 +17,14 @@ export default function MenuItem(props: MenuItemProps) {
 
             <a className={`
                     flex flex-col justify-center items-center
-                    h-20 w-20
-                    dark:text-gray-500 
+                    h-20 w-20 dark:text-gray-500 
                     ${props.className}`} >
 
                 {props.icon}
 
                 <span className={`text-xs font-light`}>
 
-                    {props.text} 
+                    {props.text}
 
                 </span>
             </a>

@@ -6,7 +6,7 @@ import useAuth from "../data/hooks/useAuth";
 
 export default function Auth() {
 
-    const { user, loginGoogle } = useAuth()
+    const { user, loginGoogle } = useAuth();
 
     const [auth, setAuth] = useState<"login" | "cadastro">("login");
 
@@ -22,9 +22,9 @@ export default function Auth() {
 
     function onSubmit() {
         if (auth === "login") {
-            showError("Ocorreu um erro no Login", 7)
+            showError("Ocorreu um erro no Login", 7);
         } else {
-            showError("Ocorreu um erro no Cadastro", 7)
+            showError("Ocorreu um erro no Cadastro", 7);
         };
     };
 

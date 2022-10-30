@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 
-import { DataGrid, GridColDef } from "@mui/x-data-grid";
+import { DataGrid } from "@mui/x-data-grid";
 
 import useAppData from "../../data/hooks/useAppData";
 
@@ -10,23 +10,21 @@ export default function DataTable({ url, columns }) {
 
     const [list, setList] = useState([]);
 
-    const users = () => {
-        useEffect(() => {
-            fetch(url)
-                .then((res) => res.json())
-                .then((json) => setList(json.data));
-        }, []);
-    };
-
-    users();
+    useEffect(() => {
+        fetch(url)
+            .then((res) => res.json())
+            .then((json) => setList(json.data));
+    }, []);
 
     return (
         <div className="w-full">
-            <DataGrid sx={{
-                color: { color },
-                mt: 1,
-                height: "75vh"
-            }}
+            <DataGrid
+                sx={{
+                    color: { color },
+                    mt: 1,
+                    height: "100vh",
+                    border: `1px solid ${color}`
+                }}
 
                 initialState={{
                     pagination: {
@@ -39,14 +37,3 @@ export default function DataTable({ url, columns }) {
         </div>
     );
 };
-
-export async function getServerSideProps() {
-    // Fetch data from external API
-    const res = await fetch(`http://localhost:3000/api/client`)
-    const data = await res.json()
-
-    console.log(data); 
-  
-    // Pass data to the page via props
-    return { props: { data } }
-  }

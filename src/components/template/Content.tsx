@@ -1,6 +1,6 @@
 interface ContentProps {
     children?: any;
-}
+};
 
 // component JSX content
 export default function Content(props: ContentProps){

@@ -2,20 +2,20 @@ interface FormPostProps {
     label: string;
     value: any;
     type?: "text" | "email" | "password";
-    placeholder?: string
+    placeholder?: string;
     required?: boolean;
     changeValue: (newValue: any) => void;
-}
+};
 
 export default function FormPost(props: FormPostProps) {
 
-    return(
-        
+    return (
         <div className={`flex flex-col mt-4`}>
 
             <label className="font-semibold">{props.label}</label>
 
-            <input type={props.type ?? "text"}
+            <input
+                type={props.type ?? "text"}
                 value={props.value}
                 placeholder={props.placeholder}
                 onChange={event => props.changeValue?.(event.target.value)}

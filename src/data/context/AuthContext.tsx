@@ -31,7 +31,7 @@ export function AuthProvider(props) {
     async function loginGoogle() {
         
         const res = await firebase.auth().signInWithPopup(
-            new firebase.auth.GoogleAuthProvider()
+            new firebase.auth.GoogleAuthProvider(),
         );
 
         // validação de login com Google
@@ -46,7 +46,7 @@ export function AuthProvider(props) {
     return(
         <AuthContext.Provider value={{
             user,
-            loginGoogle
+            loginGoogle,
         }}>
             {props.children}
         </AuthContext.Provider>

@@ -1,11 +1,11 @@
 //import states
 import { createContext, useState } from "react";
 
-type Tema = "dark" | "";
+type Theme = "dark" | "";
 type Color = "white" | "black";
 
 interface AppContextProps {
-    theme?: Tema;
+    theme?: Theme;
     color?: Color;
     changeTheme?: () => void;
 };
@@ -14,7 +14,7 @@ interface AppContextProps {
 const AppContext = createContext<AppContextProps>({});
 
 export function AppProvider(props) {
-    const [theme, setTheme] = useState<Tema>("dark");
+    const [theme, setTheme] = useState<Theme>("dark");
     const [color, setColor] = useState<Color>("white");
 
     function changeTheme() {
